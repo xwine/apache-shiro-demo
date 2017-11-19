@@ -19,7 +19,7 @@
 > 2007年改名为Spring Security
 > 产生背景：在传统的JavaEE的Servlet规范或者EJB规范里面，安全配置工作量很大，而且移植性太差，spring security能弥补它们的缺憾。
 
-#####Apache shiro
+##### Apache shiro
 
 shiro主要包含四个核心接口
 
@@ -53,14 +53,14 @@ implements Authorizer, PermissionResolverAware, RolePermissionResolverAware
 
 ![](https://shiro.apache.org/assets/images/ShiroArchitecture.png)
 
-#####SpringSecurity
+##### SpringSecurity
 
 ![](http://einnovator.org/store/docs/refcard/quickguide-12-spring-security/spring-security-arch.png)
 ![](http://einnovator.org/store/docs/refcard/quickguide-12-spring-security/spring-security-filter-chain.png)
 
 ##### 总结
 
-#####参考
+##### 参考
 [SpringSecurity官方文档](https://docs.spring.io/spring-security/site/docs/4.2.3.RELEASE/reference/htmlsingle/)
 [Apache Shiro参考手册](http://shiro.apache.org/reference.html)
 [Spring Security QuickQuide](http://einnovator.org/document/334/spring-security)
