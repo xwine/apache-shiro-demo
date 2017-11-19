@@ -1,0 +1,57 @@
+group 'com.jd'
+version '1.0-SNAPSHOT'
+
+apply plugin: 'java'
+//应用war插件构建web项目
+apply plugin:'war'
+
+sourceCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+
+    compile group: 'commons-logging', name: 'commons-logging', version: '1.1.3'
+
+//    compile group: 'javax.servlet', name: 'servlet-api', version: '2.5'
+
+    compile group: 'org.apache.shiro', name: 'shiro-core', version: '1.3.1'
+
+    compile group: 'org.apache.shiro', name: 'shiro-web', version: '1.3.1'
+
+    compile group: 'org.apache.shiro', name: 'shiro-ehcache', version: '1.2.3'
+
+    compile group: 'org.apache.shiro', name: 'shiro-spring', version: '1.2.3'
+
+    compile group: 'org.springframework', name: 'spring-context', version: '4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-core', version: '4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-beans', version: '4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-aop', version: '4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-web', version: '4.3.5.RELEASE'
+    compile group: 'org.springframework', name: 'spring-webmvc', version: '4.3.5.RELEASE'
+    compile group: 'net.sf.ehcache', name: 'ehcache', version: '2.6.10', ext: 'pom'
+
+
+//    compile group: 'org.slf4j', name: 'slf4j-api', version: '1.7.7'
+
+    testCompile group: 'ch.qos.logback', name: 'logback-classic', version: '1.0.13'
+    testCompile group: 'junit', name: 'junit', version: '4.12'
+}
+/**
+ * 自定义任务---创建目录结构
+ */
+def createDir = {
+    path ->
+        File dir = new File(path)
+        if(!dir.exists()){
+            dir.mkdirs()
+        }
+}
+task makeJavaDir() {
+    def paths = ['src/main/java','src/main/java','src/main/resources','src/test/java','src/test/resources','src/main/webapp']
+    doFirst{
+        paths.forEach(createDir);
+    }
+}
